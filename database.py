@@ -28,7 +28,7 @@ class Customer:
                 email_address TEXT NOT NULL,
                 address TEXT NOT NULL
             )''')
-            # Insert customer data# Customer class data is insert in the passengers table
+            # Insert customer data
             cursor.execute('''INSERT INTO passengers (first_name, second_name, last_name, phone_number, email_address, address)
                               VALUES (?, ?, ?, ?, ?, ?)''',
                            (self.first_name, self.second_name, self.last_name, self.phone_number, self.email_address, self.address))
