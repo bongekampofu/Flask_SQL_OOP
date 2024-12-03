@@ -19,7 +19,7 @@ class Customer:
             conn = sqlite3.connect(db_path)
             cursor = conn.cursor()
             # Ensure the passengers table exists
-            cursor.execute('''CREATE TABLE IF NOT EXISTS passengers (
+            cursor.execute('''CREATE TABLE IF NOT EXISTS customers (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
                 first_name TEXT NOT NULL,
                 second_name TEXT NOT NULL,
@@ -29,7 +29,7 @@ class Customer:
                 address TEXT NOT NULL
             )''')
             # Insert customer data
-            cursor.execute('''INSERT INTO passengers (first_name, second_name, last_name, phone_number, email_address, address)
+            cursor.execute('''INSERT INTO customers (first_name, second_name, last_name, phone_number, email_address, address)
                               VALUES (?, ?, ?, ?, ?, ?)''',
                            (self.first_name, self.second_name, self.last_name, self.phone_number, self.email_address, self.address))
             conn.commit()
@@ -42,7 +42,7 @@ def create_tables(db_path):
     """Create the database tables if they don't exist."""
     conn = sqlite3.connect(db_path)
     cursor = conn.cursor()
-    cursor.execute('''CREATE TABLE IF NOT EXISTS passengers (
+    cursor.execute('''CREATE TABLE IF NOT EXISTS customers (
                         id INTEGER PRIMARY KEY AUTOINCREMENT,
                         first_name TEXT,
                         second_name TEXT,
