@@ -4,7 +4,7 @@ import os
 from database import Customer, create_tables
 
 # Define the database path
-DATABASE_PATH = 'C:\\Users\\Bongeka.Mpofu\\DB Browser for SQLite\\flight.db'
+DATABASE_PATH = 'C:\\Users\\Bongeka.Mpofu\\DB Browser for SQLite\\site.db'
 
 # Ensure the database tables are created
 create_tables(DATABASE_PATH)
